@@ -1,0 +1,31 @@
+<view class="container">
+  <view class='banner'>
+    <view class='avatar' style="background-image:url({{avatar}})"></view>
+    <view class='userName'>高生</view>
+  </view>
+  <view class='myMoney'>
+    <view class='nowMoney'>余额0元，冻结0元</view>
+    <button class='recharge'>充值</button>
+    <button class='cash'>提现</button>
+  </view>
+  <view class='my-item'>
+    当前积分 2
+    <button class='daySign'>每日签到</button>
+  </view>
+  <view class="my-item">
+    积分兑换
+  </view>
+  <view class="my-item">
+    我的订单
+  </view>
+  <view class="my-item">
+    我的收获地址
+  </view>
+  <view class="my-item">
+    我的优惠券
+  </view>
+  <botton class='bindPhone'>绑定手机号</botton>
+  <view class='about'>关于我们</view>
+  <view class='reSign'>重新授权登陆</view>
+</view>
+  

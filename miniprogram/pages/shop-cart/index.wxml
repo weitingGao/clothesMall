@@ -1,0 +1,43 @@
+<!--pages/shop-cart/index.wxml-->
+<view class="container">
+<!-- 购物车不为空 -->
+  <view wx:if="{{shopCar.length}}" style='width:750rpx;'>
+    <view class='carTop'>
+      <view class='carTitle'>微商城</view>
+      <view class="edit-btn" hidden="{{!saveHidden}}" bindtap="editTap">编辑</view>
+      <view class="edit-btn" hidden="{{saveHidden}}" bindtap="saveTap">完成</view>
+    </view>
+    <!-- 物品展示 -->
+    <view class='proInfo_box'>
+      <view class='proInfo' bindtap="selectTap" wx:for="{{shopCar}}" wx:key="{{index}}" data-index="{{index}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.left}}">
+        <view class='pro_state {{item.active? "active":""}}'></view>
+        <view class='pro_photo' style='background-image:url({{item.photo}})'></view>
+        <view class='pro_name'>{{item.name}}</view>
+        <view class='pro_price'>¥ {{item.price}}</view>
+        <view class="buy-num">
+          <view class="jian-btn {{item.numbers==1? 'disabled' : ''}}" catchtap="jianBtnTap" data-index="{{index}}">-</view>
+          <input  type="number" value="{{item.numbers}}" disabled/>
+          <view class="jia-btn {{item.numbers==curTouchGoodStore? 'disabled' : ''}}" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+        </view>
+        <view class="delete-btn" data-index="{{index}}" catchtap="delItem">
+          删除
+        </view>
+      </view>
+    </view>
+  <!-- 底部结算栏 -->
+    <view class="jiesuan-box">
+      <view class="left-price">
+        <view class="all-selected  {{allSelect?'active':''}}" bindtap="bindAllSelect">全选</view>
+        <view class="total" hidden="{{noSelect}}">合计：¥ {{totalPrice}} + {{totalScoreToPay}} 积分</view>
+      </view>
+      <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{!saveHidden}}" bindtap="toPayOrder">去结算</view>
+      <view class="to-pay-btn {{noSelect?'no-select':''}}" hidden="{{saveHidden}}" bindtap="deleteSelected">删除</view>
+    </view>
+  </view>
+  <!-- 购物车为空时 -->
+  <view class='kong' wx:else>
+    <view class='shopCarImg' style='background-image:url(/../images/icon-cart.png)'></view>
+    <view class='shopCar_tip'>购物车空空如也～</view>
+    <button class='goLook' bindtap='goIndex'>去逛逛</button>
+  </view>
+</view>

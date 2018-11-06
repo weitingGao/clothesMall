@@ -1,0 +1,101 @@
+/* pages/my/index.wxss */
+.banner{
+  width: 100%;
+  height: 320rpx;
+  background-color: #ff7575;
+  position: relative;
+}
+.avatar{
+  width: 160rpx;
+	height: 160rpx;
+	margin: 60rpx auto 20rpx ;
+	border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+.userName{
+  font-size: 30rpx;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+.myMoney{
+  width:100%;
+  height: 210rpx;
+  box-sizing: border-box;
+  padding-top: 40rpx;
+  padding-left: 35rpx;
+  border-bottom:  1px solid 	#E0E0E0;
+}
+.nowMoney{
+  font-size: 30rpx;
+  color: #000;
+  margin-bottom: 20rpx;
+}
+.recharge{
+  float: left;
+  width: 300rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color:#00DB00;
+}
+.cash{
+  float: left;
+  margin-left: 60rpx;
+  width: 300rpx;
+  height: 80rpx;
+  color: #fff;
+  background-color:red;
+}
+.my-item{
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto,750rpx auto;
+  margin: 20rpx 0; 
+  border-bottom: 1px solid #eee;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 100rpx;
+  position: relative;
+  font-size: 30rpx;
+}
+.daySign{
+  width:183rpx;
+  height:74rpx;
+  position:absolute;
+  left:600rpx;
+  bottom:22rpx;
+  font-size:30rpx;
+  background-color:#eee;
+}
+.bindPhone{
+  width:230rpx;
+  height:70rpx;
+  margin:auto;
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  background-color:#eee;
+  text-align: center;
+  line-height: 80rpx;
+}
+.about{
+  width: 100%;
+  background: url(https://cdn.it120.cc/images/weappshop/arrow-right.png) no-repeat 750rpx center;
+  background-size: 16rpx auto,750rpx auto;
+  margin: 20rpx 0; 
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 100rpx;
+  border-bottom: 10rpx solid #eee;
+  border-top: 10rpx solid #eee;
+  font-size: 30rpx;
+}
+.reSign{
+  width: 100%;
+  height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: red;
+  text-align: center;
+  line-height: 80rpx;
+}

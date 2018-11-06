@@ -1,0 +1,100 @@
+<!--pages/goodsDetail/index.wxml 商品详情-->
+<view class="container">
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{swiperData.indicatorDots}}"
+    autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}" duration="{{swiperData.duration}}" circular="{{swiperData.circular}}" indicator-active-color="{{swiperData.activeColor}}">
+    <block wx:for="{{swiperData.imgUrls}}" wx:key="item">
+      <swiper-item class="slide-image" style="background-image:url({{item}})" >
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 商品名称 -->
+  <view class='goodsBox'>
+    <view class='name'>{{goods.name}}</view>
+    <view class='shareTip' wx:if="{{goods.awards}}" >分享有赏，好友下单后可得 {{goods.awards}} 元 现金奖励</view>
+    <view class='goodsBox2'>
+      <view class='price'>¥ {{goods.price}}</view>
+      <view class='buyNum'>购买{{goods.numbers}}次</view>
+      <view class='praise'>共收到{{goods.praise}}个好评</view>
+    </view>
+    <view class='shareBox'>
+      <view class='shareIcon' style='background-image:url(/../images/qd.png)'></view>
+      <view class="shareP">分享有赏</view>
+    </view>
+  </view>
+    <!-- 选择尺码 -->  
+  <view class='choose' style='background-image:url(/../images/arrow-right.png)' bindtap='chooseBtn'>
+    选择：尺码 颜色
+  </view>
+  <!-- 商品介绍 -->
+ <view class='introduce'>
+  <view class='intro_title'>商品介绍</view>
+  <view class='describe'>{{goods.describe}}</view>
+  <view wx:for="{{goods.photo}}" wx:key="{{item}}" class='photo'>
+    <image class='pro_img' src='{{item}}'></image>
+  </view>
+ </view>
+ <!-- 大家评价 -->
+ <view wx:if="{{evaluate}}" class='evaluateBox'>
+  <view class='evalTop'>大家评价 <p style="color:red">（{{evaluate.length}}）</p> </view>
+  <view class='eval_contain' wx:for="{{evaluate}}" wx:key="{{item}}">
+    <view class='eval_avatar' style="background-image:url({{item.eval_avatar}})"></view>
+    <view class='evaluate'>
+      <view wx:if="{{item.eval_text}}" class='eval_text'>{{item.eval_text}}</view>
+      <view wx:else  class='eval_text'>系统默认好评</view>
+      <view class='eval_time'>{{item.eval_time}}</view>
+      <view wx:if="{{item.eval_size}}" class='eval_size'>尺码：{{item.eval_size}}</view>
+      <view wx:if="{{item.eval_color}}" class='eval_color'>颜色：{{item.eval_color}}</view>
+    </view>
+    <view wx:if="{{item.eval_type}}" class='eval_type'>{{item.eval_type}}</view>
+    <view wx:else class='eval_type'>好评</view>
+  </view>
+ </view>
+ <!-- 底栏 -->
+  <view class='buttomBox'>
+    <view class='kefu'>客服</view>
+    <view class='shopCar' bindtap='goShopCar'>购物车<view class='car_Num'>({{carNum}})</view></view>
+    <!--判断是否拼团 -->
+    <view wx:if="{{!collage}}" class='addCar' bindtap='addCar'>加入购物车</view>
+    <view wx:else class='addCar'>单独购买</view>
+    <view wx:if="{{!collage}}" class='goBuy' bindtap='goBuy'>立即购买</view>
+    <view wx:else class='goBuy'>发起拼团</view>
+  </view>
+  <!-- 物品规格选择 -->
+  <view class='show-popup' wx:if="{{shopType}}">
+    <view class="popup-mask" bindtap="closePopupTap"></view>
+    <view class="popup-contents">
+      <view class='popClose' bindtap="closePopupTap"></view>
+      <view class='pop-goods'>
+        <view class='pop_img' style="background-image:url({{goods.img}})" ></view>
+        <view class='pop_goodsName'>{{goods.name}}</view>
+        <view class='pop_goodsPrice'>¥ {{goods.price}}</view>
+      </view>
+      <view class='pop-size' wx:if="{{goods.size}}" >
+        <view class="pop_title" >尺码</view>
+        <view class="goodsSize {{index==sizeIdx ? 'active' : '' }}" bindtap='selectSize' data-index="{{index}}" wx:for="{{goods.size}}" wx:key="{{item}}">{{item}}</view>
+      </view>
+      <view class='pop-color' wx:if="{{goods.color}}">
+        <view class='pop_title'>颜色</view>
+        <view>
+          <view class="goodsColor {{index==colorIdx ? 'active' : '' }}" bindtap='selectColor' data-index="{{index}}" wx:for="{{goods.color}}" wx:key="{{item}}">{{item}}</view>
+        </view>
+      </view>
+      <view class='pop-num'>
+        <view class='pop_num_title '>购买数量</view>
+        <view class="buy-num">
+          <view class="jian-btn {{goods.numbers==1? 'disabled' : ''}}" catchtap="jianBtnTap">-</view>
+          <input  type="number" value="{{goods.numbers}}" disabled/>
+          <view class="jia-btn {{goods.numbers==curTouchGoodStore? 'disabled' : ''}}" catchtap="jiaBtnTap">+</view>
+        </view>
+      </view>
+
+      <view class="popup-join-btn" wx:if="{{shopType =='addShopCar'}}" bindtap="addShopCar">
+        加入购物车
+      </view>
+      <view class="popup-join-btn" data-shopType="{{shopType}}" wx:if="{{shopType =='tobuy' || shopType =='toPingtuan'}}" bindtap="buyNow">
+        立即购买
+      </view>                 
+    </view>
+  </view>
+</view>

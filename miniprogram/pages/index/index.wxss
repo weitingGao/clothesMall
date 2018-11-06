@@ -1,0 +1,148 @@
+/**index.wxss**/
+swiper{
+  width: 100%;
+  height: 540rpx;
+  position: relative;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.findBox{
+  width: 100%;
+  height: 90rpx;
+  background-color: rgba(77,255,255,0.5);
+  position: fixed;
+  top: 0;
+  left:0;
+  z-index: 2;
+  padding-top: 20rpx;
+}
+.findInput{
+  width: 530rpx;
+  height: 70rpx;
+  float: left;
+  background-color: #fff;
+  font-size: 24rpx;
+}
+.findIcon{
+  width: 50rpx;
+  height: 70rpx;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  float: left;
+  background-color: #fff;
+  margin-left: 15rpx;
+}
+.findBtn{
+  width: 140rpx;
+  height: 70rpx;
+  float: left;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 70rpx;
+  text-align: center;
+  background-color: 	#9F35FF;
+  border-top-right-radius:15rpx;
+  border-bottom-right-radius:15rpx;
+}
+.nav{
+  width: 100%;
+  height: 78rpx;
+  overflow: auto;
+}
+.navbox{
+  box-sizing: border-box;
+  width: 125rpx;
+  height: 78rpx;
+  float: left;
+  text-align: center;
+  font-size: 24rpx;
+  color: #000;
+  line-height: 78rpx;
+}
+.nav::-webkit-scrollbar {
+        display: none;
+}
+.navbox.active{
+  border-bottom: 1rpx solid red;
+}
+.notice{
+  margin-top: 2rpx;
+  box-sizing: border-box;
+  width: 100%;
+  height: 90rpx;
+  font-size: 27rpx;
+  color: #666;
+  padding-left: 15rpx;
+  line-height: 90rpx;
+  border-top: 5rpx solid 	#D3D3D3;
+  border-bottom: 5rpx solid #D3D3D3;
+}
+.notice p{
+  color:red;
+}
+.discountBox{
+  margin-top: 5rpx;
+  margin-bottom: 15rpx;
+  width: 100%;
+  height: 150rpx;
+  overflow: auto;
+  overflow-y: hidden;
+}
+.discountBox::-webkit-scrollbar {
+        display: none;
+}
+.discount{
+  width: 285rpx;
+  height: 150rpx;
+  background-color: #FFA500;
+  float: left;
+  margin-right: 8rpx;
+  margin-left: 5rpx;
+  color: #fff;
+}
+.price{
+  margin-top: 15rpx;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+.disText{
+  margin-left: 15rpx;
+  font-size: 18rpx;
+}
+.proList{
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color:	#F0F0F0;
+}
+.proView{
+  float: left;
+  width: 350rpx;
+  height: 470rpx;
+  margin: 0 12.5rpx;
+  margin-bottom: 18rpx;
+  background-color: #fff;
+}
+.pro_photo{
+  width: 350rpx;
+  height: 350rpx;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.pro_name{
+  font-size: 24rpx;
+  margin:20rpx auto 18rpx 20rpx;
+  color: #000;
+}
+.pro_price{
+  font-size: 24rpx;
+  color: red;
+  margin-left: 20rpx;
+}

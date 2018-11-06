@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="findBox">
+    <view class='findIcon' style='background-image:url(/../images/search-pic.png)'></view>
+    <input placeholder='请输入搜索内容' class='findInput'></input>
+    <view class='findBtn'>搜索</view>
+  </view>
+<!-- 轮播图 -->
+  <swiper indicator-dots="{{swiperData.indicatorDots}}"
+    autoplay="{{swiperData.autoplay}}" interval="{{swiperData.interval}}" duration="{{swiperData.duration}}" circular="{{swiperData.circular}}" indicator-active-color="{{swiperData.activeColor}}">
+    <block wx:for="{{swiperData.imgUrls}}" wx:key="item">
+      <swiper-item class="slide-image" style="background-image:url({{item}})" >
+      </swiper-item>
+    </block>
+  </swiper>
+<!-- 导航条 -->
+  <view class="nav">
+    <view style='width:{{navWidth}}'>
+      <view wx:for="{{navData}}" wx:key="item" wx:for-index="idx" class="navbox {{idx==navIdx?'active':''}}"  bindtap="addClass" data-idx="{{idx}}">{{item}}</view>
+    </view>
+  </view>
+<!-- 公告 -->
+<view class='notice'>
+  公告：<p>{{notice}}</p>
+</view>
+<!-- 优惠券 -->
+<view class='discountBox'>
+  <view style="height:100%;width:{{navWidth2}}" >
+    <view wx:for="{{discount}}" wx:key="item" class='discount'>
+      <view class='price'>¥ {{item.price}}元</view>
+      <view class='disText'>{{item.dounType}}</view>
+      <view class='disText'>{{item.condition}}</view>
+      <view class='disText'>{{item.end}}</view>
+    </view>
+  </view>
+</view>
+<!-- 产品列表 -->
+<view class="proList">
+  <view wx:for="{{proData}}" wx:key="item" class='proView' bindtap='toDetail' >
+    <view class='pro_photo' style='background-image:url({{item.photo}})'></view>
+    <view class='pro_name'>{{item.name}}</view>
+    <view class='pro_price'>¥ {{item.price}}</view>
+  </view>
+</view>
+</view>
