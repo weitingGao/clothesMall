@@ -1,7 +1,7 @@
 <view class="container">
   <view class='banner'>
-    <view class='avatar' style="background-image:url({{avatar}})"></view>
-    <view class='userName'>高生</view>
+    <view class='avatar' style="background-image:url({{avatarUrl}})"></view>
+    <view class='userName'>{{userName}}</view>
   </view>
   <view class='myMoney'>
     <view class='nowMoney'>余额0元，冻结0元</view>

@@ -14,7 +14,7 @@ Page({
       imgUrls: [
         'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_17583304               决定是否 i 平顶山肌肤法律的索科洛夫肯定是咖啡  反抗精神的肌肤    的是非得失 7715.jpg'
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
       ],
       indicatorDots: true,
       autoplay: true,

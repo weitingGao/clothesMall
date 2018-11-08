@@ -146,3 +146,44 @@ swiper{
   color: red;
   margin-left: 20rpx;
 }
+
+/* 登陆弹窗 */
+.model{
+  width:80%;
+  height:42%;
+  position:absolute;
+  background:#fff;
+  top:30%;
+  left:10%;
+  z-index: 3;
+}
+.model .btns{
+  width: 300rpx;
+  height: 150rpx;
+  position:absolute;
+  bottom: 10%;
+  left:20%;
+}
+.modelTitle{
+  width: 100%;
+  font-size: 40rpx;
+  color: #000;
+  margin-top: 10%;
+  text-align: center
+}
+.modelBody{
+  width: 100%;
+  font-size: 30rpx;
+  color: #000;
+  margin-top: 10%;
+  text-align: center;
+}
+.mask{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  opacity: 0.5;
+}

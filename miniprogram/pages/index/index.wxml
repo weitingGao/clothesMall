@@ -42,4 +42,16 @@
     <view class='pro_price'>¥ {{item.price}}</view>
   </view>
 </view>
+   <!-- 自定义弹框开始 -->
+  <view wx:if="{{showModel}}" class="model">
+    <view class="modelTitle">
+      微信商城需要您的微信信息
+    </view>
+    <view class="modelBody">为了您更好的使用小程序<br/>请同意微信授权</view>
+    <view class="btns">
+      <button open-type="getUserInfo" class="agree" bindgetuserinfo="agreeGetUser" lang="zh_CN">同意授权</button>
+    </view>
+  </view>
+  <view wx:if="{{showModel}}" class="mask"></view>
+  <!-- 自定义弹框结束 -->
 </view>

@@ -12,7 +12,8 @@ App({
       })
     }
     this.globalData = {
-      openid:""
+      openid:"",
+      userInfo:{}
     }
   }
 })

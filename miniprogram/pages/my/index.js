@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    avatar:"http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg"
+    avatarUrl:"http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg",
+    userName: "未定义"
   },
 
   /**
@@ -26,7 +27,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      avatarUrl: getApp().globalData.userInfo.avatarUrl,
+      userName: getApp().globalData.userInfo.nickName
+    })
   },
 
   /**
